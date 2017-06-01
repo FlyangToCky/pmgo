@@ -46,7 +46,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:171)
-	at com.pmgo.common.DemoConfig.main(DemoConfig.java:42)
+	at com.pmgo.common.MainConfig.main(DemoConfig.java:42)
 
 2017-05-22 15:45:06
 [ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} init error
@@ -95,7 +95,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:171)
-	at com.pmgo.common.DemoConfig.main(DemoConfig.java:42)
+	at com.pmgo.common.MainConfig.main(DemoConfig.java:42)
 
 2017-05-22 15:45:06
 [ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
@@ -121,7 +121,7 @@ com.jfinal.plugin.activerecord.ActiveRecordException: java.sql.SQLException: Acc
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:171)
-	at com.pmgo.common.DemoConfig.main(DemoConfig.java:42)
+	at com.pmgo.common.MainConfig.main(DemoConfig.java:42)
 Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
@@ -223,7 +223,7 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
 	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
 	at com.jfinal.core.JFinal.start(JFinal.java:171)
-	at com.pmgo.common.DemoConfig.main(DemoConfig.java:42)
+	at com.pmgo.common.MainConfig.main(DemoConfig.java:42)
 Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
 	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
 	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:218)
@@ -556,3 +556,181 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1461)
 	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1525)
 	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2100)
+
+2017-05-24 13:23:47
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: port: 80 already in use!
+java.lang.IllegalStateException: port: 80 already in use!
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:89)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:171)
+	at com.pmgo.common.MainConfig.main(MainConfig.java:42)
+
+2017-05-24 14:31:01
+[ERROR]-[Thread: qtp932583850-18]-[com.jfinal.core.ActionHandler.handle()]: /
+com.jfinal.render.RenderException: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/html/main.html
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:74)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/html/main.html
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	... 25 more
+
+2017-05-24 14:31:02
+[ERROR]-[Thread: qtp932583850-19]-[com.jfinal.core.ActionHandler.handle()]: /
+com.jfinal.render.RenderException: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/html/main.html
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:74)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/html/main.html
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	... 25 more
+
+2017-05-24 15:23:51
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: controllerKey already exists: /
+java.lang.IllegalArgumentException: controllerKey already exists: /
+	at com.jfinal.config.Routes$Route.processControllerKey(Routes.java:157)
+	at com.jfinal.config.Routes$Route.<init>(Routes.java:146)
+	at com.jfinal.config.Routes.add(Routes.java:61)
+	at com.pmgo.common.MainConfig.configRoute(MainConfig.java:58)
+	at com.jfinal.core.Config.configJFinal(Config.java:51)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:171)
+	at com.pmgo.common.MainConfig.main(MainConfig.java:40)
+
+2017-05-24 15:28:40
+[ERROR]-[Thread: qtp932583850-19]-[com.jfinal.core.ActionHandler.handle()]: /login
+com.jfinal.render.RenderException: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/login/login_v2.html
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:74)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/login/login_v2.html
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	... 25 more
+
+2017-05-24 15:28:40
+[ERROR]-[Thread: qtp932583850-20]-[com.jfinal.core.ActionHandler.handle()]: /login
+com.jfinal.render.RenderException: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/login/login_v2.html
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:63)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:99)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:74)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: File not found : C:\CODES\SELF\pmgo\src\main\webapp/login/login_v2.html
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	... 25 more
