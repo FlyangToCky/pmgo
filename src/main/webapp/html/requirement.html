@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>需求池</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-sm-12">
+            <table data-toggle="table" id="table">
+                <thead>
+                <tr>
+                    <th>序号</th><th>需求编号</th><th>模块</th><th>子模块</th><th>功能点</th>
+                    <th>任务简述</th><th>价值简述</th><th>需求层次</th><th>需求分类</th>
+                    <th>优先级</th><th>提交时间</th><th>录入时间</th><th>发布时间</th>
+                    <th>提交人</th><th>需求负责人</th><th>测试负责人</th><th>运营负责人</th>
+                    <th>开发量</th><th>性价比</th><th>状态</th><th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Item 1</td>
+                    <td>$1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Item 2</td>
+                    <td>$2</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- 全局js -->
+    <script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 插件js -->
+    <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src=../"js/content.js?v=1.0.0"></script>
+
+    <script>
+        $('#table').bootstrapTable({
+            "undefinedText":"空",
+            "striped":true,
+            
+        });
+    </script>
+</body>
+
+</html>
