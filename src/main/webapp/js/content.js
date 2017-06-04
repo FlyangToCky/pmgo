@@ -17,10 +17,10 @@
 
 
 //判断当前页面是否在iframe中
-if (top == this) {
+/*if (top == this) {
     var gohome = '<div class="gohome"><a class="animated bounceInUp" href="index.html?v=4.0" title="返回首页"><i class="fa fa-home"></i></a></div>';
     $('body').append(gohome);
-}
+}*/
 
 //animation.css
 function animationHover(element, animation) {
@@ -33,7 +33,7 @@ function animationHover(element, animation) {
             //动画完成之前移除class
             window.setTimeout(function () {
                 element.removeClass('animated ' + animation);
-            }, 2000);
+            }, 1500);
         });
 }
 

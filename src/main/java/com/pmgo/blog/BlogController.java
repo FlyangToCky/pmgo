@@ -13,7 +13,8 @@ import com.pmgo.common.model.Blog;
  */
 @Before(BlogInterceptor.class)
 public class BlogController extends Controller {
-	
+
+
 	static BlogService service = new BlogService();
 	
 	public void index() {
@@ -51,6 +52,10 @@ public class BlogController extends Controller {
 	public void delete() {
 		service.deleteById(getParaToInt());
 		redirect("/blog");
+	}
+
+	public void test(){
+		renderJson("test","fly");
 	}
 }
 

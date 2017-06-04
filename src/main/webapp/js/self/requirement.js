@@ -10,8 +10,8 @@ $('#table').bootstrapTable({
     searchTimeOut:500, //搜索超时时间
     pagination:true, //显示分页条
     pageNumber:1, //分页首页页码
-    pageSize:10, //页面数据条数
-    pageList:[10, 25, 50, 100],
+    pageSize:15, //页面数据条数
+    pageList:[15, 25, 50, 100],
     showRefresh:true, //显示刷新按钮
     showToggle:true, //显示列表和详情的切换
     showColumns:true, //显示列选择
@@ -190,14 +190,52 @@ $('#table').bootstrapTable({
         code: 'zly_2015-10-05_00002',
         module: '测试2',
         time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
+    }, {
+        id: 2,
+        code: 'zly_2015-10-05_00002',
+        module: '测试2',
+        time_commit: '2015-10-07'
     }]
 });
 $(function () {
-  $("#btn_add").click(function () {
-      layer.open({
-          type: 2,
-          content: 'requirement_add.html' //这里content是一个普通的String
-      });
-  });
+    var code,module,child_module ="";
+    var paramMap = {
+        code:code,
+        module:module,
+        child_module:child_module
+    };
+    $("#save").click(function () {
+        paramMap.code = $("#code").val();
+        paramMap.module = $("#module").val();
+        paramMap.child_module = $("#child_module").val();
+        $.post("/pmRequirement/save", paramMap,function (data) {
+            alert(data.result);
+            },'json');
+    });
 });
 
