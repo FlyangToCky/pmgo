@@ -17,7 +17,7 @@ $(function () {
             paramMap.password = password;
             $.post("/logIn/entry", paramMap,function (data) {
                 console.log(data.result);
-                window.location.href="/html/main.html";
+                window.location.href="/html/project.html";
             },'json');
         }
     });
