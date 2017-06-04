@@ -57,8 +57,10 @@ public class MainConfig extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", LogInController.class, "/html");	// 第三个参数为该Controller的视图存放路径
+        me.add("/html", LogInController.class, "/html");
 		//me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
 		me.add("/pmRequirement", RequirementController.class); //需求
+        me.add("/logIn", LogInController.class);  //登录
 		me.add("/register", RegisterController.class);  //注册
 	}
 	

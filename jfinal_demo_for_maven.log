@@ -261,3 +261,26 @@ java.lang.NullPointerException
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
 	at java.lang.Thread.run(Thread.java:745)
+
+2017-06-04 19:21:29
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: The action "com.pmgo.system.login.LogInController.index()" can not be mapped, actionKey "/login" is already in use.
+java.lang.RuntimeException: The action "com.pmgo.system.login.LogInController.index()" can not be mapped, actionKey "/login" is already in use.
+	at com.jfinal.core.ActionMapping.buildActionMapping(ActionMapping.java:108)
+	at com.jfinal.core.JFinal.initActionMapping(JFinal.java:102)
+	at com.jfinal.core.JFinal.init(JFinal.java:66)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServerForIDEA.doStart(JettyServerForIDEA.java:133)
+	at com.jfinal.server.JettyServerForIDEA.start(JettyServerForIDEA.java:72)
+	at com.jfinal.core.JFinal.start(JFinal.java:171)
+	at com.pmgo.common.MainConfig.main(MainConfig.java:43)

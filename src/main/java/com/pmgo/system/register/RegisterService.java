@@ -30,7 +30,7 @@ public class RegisterService {
         String name = paramMap.get("name")[0];
         String password = MD5.getStringMD5(paramMap.get("password")[0]);
         String phone = paramMap.get("phone")[0];
-        if(findUserIsExistedByPhone(phone)){ //用户已近存在
+        if(findUserIsExistedByPhone(phone)){ //用户已经存在
             return false;
         }else{
             return new SysUser()
