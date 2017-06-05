@@ -13,7 +13,9 @@ $(function () {
         paramMap.phone = $("#phone").val();
         paramMap.password = $("#pwd2").val();
         $.post("/register/add", paramMap,function (data) {
-            alert(data.result);
+            if(data.result){
+                window.location.href='/html/project.html';
+            }
         },'json');
     });
 });

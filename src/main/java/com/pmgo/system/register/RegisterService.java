@@ -27,6 +27,7 @@ public class RegisterService {
     }
     //保存新用户
     public boolean registerNewUser(Map<String,String[]> paramMap){
+        String id = StringUtil.getUUID();
         String name = paramMap.get("name")[0];
         String password = MD5.getStringMD5(paramMap.get("password")[0]);
         String phone = paramMap.get("phone")[0];
@@ -34,6 +35,7 @@ public class RegisterService {
             return false;
         }else{
             return new SysUser()
+                    .setId(id)
                     .setName(name)
                     .setPhone(phone)
                     .setPassword(password)

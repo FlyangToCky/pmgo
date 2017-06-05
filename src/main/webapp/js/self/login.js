@@ -16,8 +16,11 @@ $(function () {
             paramMap.phone = phone;
             paramMap.password = password;
             $.post("/logIn/entry", paramMap,function (data) {
-                console.log(data.result);
-                window.location.href="/html/project.html";
+                if(data.result){
+                    window.location.href="/html/project.html";
+                }else{
+                    layer.alert("手机号不存在或者密码错误");
+                }
             },'json');
         }
     });
