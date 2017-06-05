@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50628
 File Encoding         : 65001
 
-Date: 2017-06-01 17:09:09
+Date: 2017-06-05 09:02:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `blog` (
   `title` varchar(200) NOT NULL,
   `content` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog
@@ -32,7 +32,6 @@ CREATE TABLE `blog` (
 INSERT INTO `blog` VALUES ('1', 'JFinal Demo Title here', 'JFinal Demo Content here');
 INSERT INTO `blog` VALUES ('2', 'test 1', 'test 1');
 INSERT INTO `blog` VALUES ('3', 'test 2', 'test 2');
-INSERT INTO `blog` VALUES ('6', '洞房洞房环佩冷', '打发第三方第三方是的');
 
 -- ----------------------------
 -- Table structure for t_pm_project
@@ -55,7 +54,7 @@ CREATE TABLE `t_pm_project` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_pm_requirement`;
 CREATE TABLE `t_pm_requirement` (
-  `id` int(11) NOT NULL COMMENT '主键',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `code` varchar(30) NOT NULL COMMENT '需求编号',
   `module` varchar(30) DEFAULT NULL COMMENT '模块',
   `child_module` varchar(30) DEFAULT NULL COMMENT '子模块',
@@ -77,11 +76,13 @@ CREATE TABLE `t_pm_requirement` (
   `state` char(2) DEFAULT NULL COMMENT '状态',
   `mem` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_pm_requirement
 -- ----------------------------
+INSERT INTO `t_pm_requirement` VALUES ('1', '11111', '测试模块', '测试子模块', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `t_pm_requirement` VALUES ('2', '11111111', 'ecshi', 'hjkhkj', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for t_sys_logs
@@ -115,7 +116,8 @@ CREATE TABLE `t_sys_system` (
 DROP TABLE IF EXISTS `t_sys_user`;
 CREATE TABLE `t_sys_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '用户名',
+  `name` varchar(20) NOT NULL COMMENT '用户名',
+  `password` varchar(32) NOT NULL COMMENT '密码',
   `age` int(3) DEFAULT NULL COMMENT '年龄',
   `phone` varchar(15) DEFAULT NULL COMMENT '手机号',
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
@@ -123,8 +125,9 @@ CREATE TABLE `t_sys_user` (
   `qq` varchar(20) DEFAULT NULL COMMENT 'qq号码',
   `wechat` varchar(50) DEFAULT '' COMMENT '微信号',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_sys_user
 -- ----------------------------
+INSERT INTO `t_sys_user` VALUES ('1', '方洋', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '');
