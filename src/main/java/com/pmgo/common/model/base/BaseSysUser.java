@@ -9,12 +9,12 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseSysUser<M extends BaseSysUser<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.Integer id) {
+	public M setId(java.lang.String id) {
 		set("id", id);
 		return (M)this;
 	}
 
-	public java.lang.Integer getId() {
+	public java.lang.String getId() {
 		return get("id");
 	}
 

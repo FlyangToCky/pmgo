@@ -3,6 +3,7 @@ package com.pmgo.common.utils;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -514,6 +515,16 @@ public class StringUtil {
 	}
 
 	/**
+	 * 获得UUID
+	 * @return
+	 */
+	public static String getUUID(){
+		UUID uuid = UUID.randomUUID();
+		return  uuid.toString().replace("-","");
+	}
+
+
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -531,11 +542,12 @@ public class StringUtil {
 		// System.out.println("判断输入的字符串是否为纯汉字：" + isChinese("你好！"));
 		// System.out.println("判断输入的数据是否是质数：" + isPrime(12));
 		// System.out.println("人民币转换成大写：" + hangeToBig("10019658"));
-		System.out.println("去掉字符串中重复的子字符串：" + removeSameString("100 100 9658"));
+		//System.out.println("去掉字符串中重复的子字符串：" + removeSameString("100 100 9658"));
 		// System.out.println("过滤特殊字符：" + encoding("100\"s<>fdsd100 9658"));
 		// System.out.println("判断是不是合法的手机号码：" + isHandset("15981807340"));
 
 		// System.out.println("从字符串中取值Email：" + parse("159818 fwhbj@163.com
 		// 07340"));
+        System.out.println(getUUID());
 	}
 }

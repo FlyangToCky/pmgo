@@ -22,6 +22,7 @@ public class _MappingKit {
 		arp.addMapping("t_sys_logs", "id", SysLogs.class);
 		arp.addMapping("t_sys_system", "id", SysSystem.class);
 		arp.addMapping("t_sys_user", "id", SysUser.class);
+		arp.addMapping("t_tester_bugs", "id", TesterBugs.class);
 	}
 }
 

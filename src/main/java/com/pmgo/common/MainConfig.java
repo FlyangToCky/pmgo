@@ -15,6 +15,7 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
+import com.pmgo.manage.project.ProjectController;
 import com.pmgo.manage.requirement.RequirementController;
 import com.pmgo.system.login.LogInController;
 import com.pmgo.system.register.RegisterController;
@@ -57,11 +58,11 @@ public class MainConfig extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", LogInController.class, "/html");	// 第三个参数为该Controller的视图存放路径
-        me.add("/html", LogInController.class, "/html");
-		//me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
+        me.add("/html", LogInController.class, "/html"); //限制路由
 		me.add("/pmRequirement", RequirementController.class); //需求
         me.add("/logIn", LogInController.class);  //登录
 		me.add("/register", RegisterController.class);  //注册
+		me.add("/project", ProjectController.class);  //项目
 	}
 	
 	public void configEngine(Engine me) {

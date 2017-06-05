@@ -9,12 +9,12 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BasePmProject<M extends BasePmProject<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.Integer id) {
+	public M setId(java.lang.String id) {
 		set("id", id);
 		return (M)this;
 	}
 
-	public java.lang.Integer getId() {
+	public java.lang.String getId() {
 		return get("id");
 	}
 
@@ -27,22 +27,103 @@ public abstract class BasePmProject<M extends BasePmProject<M>> extends Model<M>
 		return get("name");
 	}
 
-	public M setBegin(java.util.Date begin) {
-		set("begin", begin);
+	public M setNo(java.lang.String no) {
+		set("no", no);
 		return (M)this;
 	}
 
-	public java.util.Date getBegin() {
-		return get("begin");
+	public java.lang.String getNo() {
+		return get("no");
 	}
 
-	public M setEng(java.util.Date eng) {
-		set("eng", eng);
+	public M setTimeCreate(java.util.Date timeCreate) {
+		set("time_create", timeCreate);
 		return (M)this;
 	}
 
-	public java.util.Date getEng() {
-		return get("eng");
+	public java.util.Date getTimeCreate() {
+		return get("time_create");
+	}
+
+	public M setTimePlanBegin(java.util.Date timePlanBegin) {
+		set("time_plan_begin", timePlanBegin);
+		return (M)this;
+	}
+
+	public java.util.Date getTimePlanBegin() {
+		return get("time_plan_begin");
+	}
+
+	public M setTimePlanEnd(java.util.Date timePlanEnd) {
+		set("time_plan_end", timePlanEnd);
+		return (M)this;
+	}
+
+	public java.util.Date getTimePlanEnd() {
+		return get("time_plan_end");
+	}
+
+	public M setTimeEnd(java.util.Date timeEnd) {
+		set("time_end", timeEnd);
+		return (M)this;
+	}
+
+	public java.util.Date getTimeEnd() {
+		return get("time_end");
+	}
+
+	public M setTeamId(java.lang.String teamId) {
+		set("team_id", teamId);
+		return (M)this;
+	}
+
+	public java.lang.String getTeamId() {
+		return get("team_id");
+	}
+
+	public M setTeamSize(java.lang.Integer teamSize) {
+		set("team_size", teamSize);
+		return (M)this;
+	}
+
+	public java.lang.Integer getTeamSize() {
+		return get("team_size");
+	}
+
+	public M setPersonLead(java.lang.String personLead) {
+		set("person_lead", personLead);
+		return (M)this;
+	}
+
+	public java.lang.String getPersonLead() {
+		return get("person_lead");
+	}
+
+	public M setPersonCreate(java.lang.String personCreate) {
+		set("person_create", personCreate);
+		return (M)this;
+	}
+
+	public java.lang.String getPersonCreate() {
+		return get("person_create");
+	}
+
+	public M setBudget(java.math.BigDecimal budget) {
+		set("budget", budget);
+		return (M)this;
+	}
+
+	public java.math.BigDecimal getBudget() {
+		return get("budget");
+	}
+
+	public M setIntro(java.lang.String intro) {
+		set("intro", intro);
+		return (M)this;
+	}
+
+	public java.lang.String getIntro() {
+		return get("intro");
 	}
 
 }
