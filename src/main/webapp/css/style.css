@@ -7937,12 +7937,35 @@ body.skin-3 {
     font-size: 0;
     background-color: #131e26;
 }
-/*个人增补*/
+/*****************************************个人增补**********************************************/
+/*****************************************Project**********************************************/
+    /*显示在导航栏的*/
 .round-person{
-    width: 35px;height: 35px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background-color: #00a2d4;
     text-align: center;
     color:white;
     padding-top: 6px
+}
+    /*显示在项目创建后*/
+.round-person2{
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #00a2d4;
+    text-align: center;
+    color:white;
+    padding-top: 10px;
+    vertical-align: baseline;
+}
+.round-person2 span{
+    font-size: 18px;
+    font-weight: 700;
+}
+.add-project{
+    vertical-align: top;
+    margin-left: 3px;
 }

@@ -41,7 +41,7 @@ public class ProjectService {
                 .setTimePlanBegin(DateUtil.parseDate(paramMap.get("time_plan_begin")[0]))
                 .setTimePlanEnd(DateUtil.parseDate(paramMap.get("time_plan_end")[0]))
                 .setPersonLead(paramMap.get("person_lead")[0])
-                .setPersonCreate("45645646545465456465465")
+                .setPersonCreate(paramMap.get("person_create")[0])
                 .setBudget(new BigDecimal(paramMap.get("budget")[0]))
                 .setIntro(paramMap.get("intro")[0])
                 .save();
