@@ -18,6 +18,7 @@ import com.jfinal.template.Engine;
 import com.pmgo.manage.project.ProjectController;
 import com.pmgo.manage.requirement.RequirementController;
 import com.pmgo.system.login.LogInController;
+import com.pmgo.system.logout.LogOutController;
 import com.pmgo.system.register.RegisterController;
 
 /**
@@ -61,6 +62,7 @@ public class MainConfig extends JFinalConfig {
         me.add("/html", LogInController.class, "/html"); //限制路由
 		me.add("/pmRequirement", RequirementController.class); //需求
         me.add("/logIn", LogInController.class);  //登录
+		me.add("/logOut", LogOutController.class);  //登出
 		me.add("/register", RegisterController.class);  //注册
 		me.add("/project", ProjectController.class);  //项目
 	}

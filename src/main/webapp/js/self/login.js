@@ -1,6 +1,7 @@
 /**
  * Created by fangy on 2017/6/4.
  */
+//检测登录状态
 $(function () {
     var phone,password="";
     var paramMap ={
@@ -16,10 +17,10 @@ $(function () {
             paramMap.phone = phone;
             paramMap.password = password;
             $.post("/logIn/entry", paramMap,function (data) {
-                if(data.result){
+                if(data.result.result){ //登录成功
                     window.location.href="/html/project.html";
-                }else{
-                    layer.alert("手机号不存在或者密码错误");
+                }else{ //登录失败
+                    layer.alert(data.result.error);
                 }
             },'json');
         }

@@ -1,6 +1,9 @@
 package com.pmgo.system.login;
 
 import com.jfinal.core.Controller;
+import com.pmgo.common.model.SysUser;
+
+import java.util.Map;
 
 /**
  * Created by fangy on 2017/6/4.
@@ -14,11 +17,21 @@ public class LogInController extends Controller {
 
     //登录
     public void entry(){
-        boolean result = service.entry(getParaMap());
-        if(result){ //登陆成功的情况下
-            setSessionAttr("phone",getParaMap().get("phone")[0]);
+        Map<String,Object> getMapFromDB = service.entry(getParaMap());
+        if((Boolean)getMapFromDB.get("result")){ //登陆成功的情况下
+            setSessionAttr("user",(SysUser)getMapFromDB.get("data"));  //将用户数据，放在session中
         }
-        renderJson("result",result);
+        renderJson("result",getMapFromDB);
     }
 
+    //检查登录状态
+    public void checkLoginState(){
+        //从session中取出状态
+        SysUser user = getSessionAttr("user");
+        if(user != null ){ //已经登录了
+            renderJson("result",user);
+        }else{
+            renderJson("result",false);
+        }
+    }
 }
