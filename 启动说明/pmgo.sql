@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50628
 File Encoding         : 65001
 
-Date: 2017-06-05 16:43:32
+Date: 2017-06-06 08:20:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -134,7 +134,7 @@ CREATE TABLE `t_sys_user` (
   `name` varchar(20) NOT NULL COMMENT '用户名',
   `password` varchar(32) NOT NULL COMMENT '密码',
   `age` int(3) DEFAULT NULL COMMENT '年龄',
-  `phone` varchar(15) DEFAULT NULL COMMENT '手机号',
+  `phone` varchar(11) NOT NULL COMMENT '手机号',
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
   `sex` char(2) DEFAULT '' COMMENT '性别',
   `qq` varchar(20) DEFAULT NULL COMMENT 'qq号码',
@@ -145,6 +145,7 @@ CREATE TABLE `t_sys_user` (
 -- ----------------------------
 -- Records of t_sys_user
 -- ----------------------------
+INSERT INTO `t_sys_user` VALUES ('1f8885311e274f3e94bb2f34f7e250b9', 'fly', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '');
 
 -- ----------------------------
 -- Table structure for t_tester_bugs
