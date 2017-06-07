@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50628
 File Encoding         : 65001
 
-Date: 2017-06-06 16:54:12
+Date: 2017-06-07 08:38:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,6 +58,9 @@ CREATE TABLE `t_pm_project` (
 -- Records of t_pm_project
 -- ----------------------------
 INSERT INTO `t_pm_project` VALUES ('059af6f0b35243c9b4796b538e781421', '测试赛hjkhkj', '45645646-456465', '2017-06-06 00:00:00', '2017-06-01 00:00:00', '2017-08-26 00:00:00', null, null, null, '方洋', '1f8885311e274f3e94bb2f34f7e250b9', '5555.0000', '好几款很快就会看见');
+INSERT INTO `t_pm_project` VALUES ('b6cd2bc0b80d4866b8af25f9776df806', '就会尽快还款计划', '76868', '2017-06-06 00:00:00', '2017-06-01 00:00:00', '2017-06-30 00:00:00', null, null, null, 'fly', '1f8885311e274f3e94bb2f34f7e250b9', '98889.0000', '会尽快回家客户即可');
+INSERT INTO `t_pm_project` VALUES ('d4e010a4731e4588acdb53aee1425f29', '奥特曼', '67868', '2017-06-06 20:43:33', '2017-06-06 20:43:33', '2017-06-06 20:43:33', '2017-06-06 20:43:33', null, null, '方洋', '3fd09b589a264e439e855dadf2ba73f8', '9999.0000', 'hjkhjkhjkhjkhkhjkhk');
+INSERT INTO `t_pm_project` VALUES ('ffe82e2050f1440bbe79c3b6fa381976', '火影忍者', '11111', '2017-06-06 00:00:00', '2017-06-01 00:00:00', '2017-08-11 00:00:00', null, null, null, '啦啦啦啦', 'fc875378374e415e89f01b44d18aa299', '9999.0000', 'hjkhjkhjkhjk');
 
 -- ----------------------------
 -- Table structure for t_pm_requirement
@@ -106,6 +109,9 @@ CREATE TABLE `t_relation_project_user` (
 -- ----------------------------
 -- Records of t_relation_project_user
 -- ----------------------------
+INSERT INTO `t_relation_project_user` VALUES ('207db7211bef49abbf0fbcf37dc5d256', 'd4e010a4731e4588acdb53aee1425f29', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_relation_project_user` VALUES ('399db7211bef49abbf0fbcf37dc5d256', 'd4e010a4731e4588acdb53aee1425f29', '3fd09b589a264e439e855dadf2ba73f8');
+INSERT INTO `t_relation_project_user` VALUES ('666db7211bef49abbf0fbcf37dc5d256', 'ffe82e2050f1440bbe79c3b6fa381976', '1f8885311e274f3e94bb2f34f7e250b9');
 
 -- ----------------------------
 -- Table structure for t_sys_logs
@@ -153,7 +159,12 @@ CREATE TABLE `t_sys_user` (
 -- ----------------------------
 -- Records of t_sys_user
 -- ----------------------------
-INSERT INTO `t_sys_user` VALUES ('1f8885311e274f3e94bb2f34f7e250b9', 'fly', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('1f8885311e274f3e94bb2f34f7e250b9', '方洋', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('207db7211bef49abbf0fbcf37dc5d256', 'fly3', '202cb962ac59075b964b07152d234b70', null, '7756675675', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('3fd09b589a264e439e855dadf2ba73f8', 'fly1', '202cb962ac59075b964b07152d234b70', null, '123456', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('acafa0565a4f49d7822a95eb0bfa21e2', 'fly6', '202cb962ac59075b964b07152d234b70', null, '79858587', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('d9bfdba97db64ecb8e9fd486bdfcd129', 'fly4', '202cb962ac59075b964b07152d234b70', null, '67876876', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('fc875378374e415e89f01b44d18aa299', 'fly2', '202cb962ac59075b964b07152d234b70', null, '456789', null, '', null, '');
 
 -- ----------------------------
 -- Table structure for t_tester_bugs
