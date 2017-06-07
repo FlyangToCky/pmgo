@@ -1,7 +1,9 @@
 package com.pmgo.manage.project;
 
 import com.jfinal.core.Controller;
+import com.pmgo.common.model.PmProject;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,10 +13,12 @@ public class ProjectController extends Controller {
     private ProjectService service = new ProjectService();
 
     /**
-     * 发现项目列表
+     * 根据用户Id查找项目列表
+     * 包括创建的项目和参与的项目
      */
-    public void findProjectsList(){
-
+    public void findProjectsListByUserId(){
+        List<PmProject> resultList = service.findProjectsListByUserId(getParaMap());
+        renderJson("result",resultList);
     }
 
     /**

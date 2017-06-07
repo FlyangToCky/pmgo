@@ -22,7 +22,18 @@ public class ProjectService {
      * @return
      */
     public List<PmProject> findProjectsListByUserId(Map<String,String[]> paramMap){
-        return null;
+        String userId = paramMap.get("id")[0];
+        //拥有的项目
+        String sql1="SELECT * FROM t_pm_project WHERE person_create = ?";
+        List<PmProject> list1 =PmProject.dao.find(sql1,userId);
+        //参与的项目
+        String sql2 = "SELECT * FROM t_pm_project " +
+                "WHERE id in (" +
+                "SELECT project_id FROM t_relation_project_user " +
+                "WHERE user_id= ?);";
+        List<PmProject> list2 = PmProject.dao.find(sql2,userId);
+        list1.addAll(list2);
+        return list1;
     }
 
     /**

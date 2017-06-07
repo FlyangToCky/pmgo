@@ -14,7 +14,12 @@ $(function () {
         paramMap.password = $("#pwd2").val();
         $.post("/register/add", paramMap,function (data) {
             if(data.result){
-                window.location.href='/html/project.html';
+                layer.alert("注册成功");
+                setTimeout(function () {
+                    window.location.href='/html/login.html';
+                },1000);
+            }else{
+                layer.alert("手机号已存在");
             }
         },'json');
     });

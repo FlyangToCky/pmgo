@@ -5,6 +5,10 @@ var id = ""; //用户id
 var username = ""; //用户名
 $(function () {
     checkLoginState();
+    setTimeout(function () {
+        getProjectList(id);
+    },200);
+
     //新增项目，触发动画效果
     animationHover("#add_new_project","tada");
     //日期选择插件配置
@@ -140,9 +144,29 @@ function signOut() {
 }
 
 /**
- * 查询
+ * 查询出列表
+ * 拥有的项目和参与的项目
  * @param id
  */
 function getProjectList(id) {
-
+    var list =[];
+    $.post("/project/findProjectsListByUserId", {"id":id},function (data) {
+        console.log(data);
+        if(data.result){ //有数据
+            list = data.result;
+            for(var i=0; i<list.length; i++){
+                var project = list[i];
+                    addProject(
+                        project.id,
+                        project.name,
+                        project.no,
+                        project.time_plan_begin,
+                        project.time_plan_end,
+                        project.budget,
+                        project.intro,
+                        project.person_lead
+                    );
+            }
+        }
+    },'json');
 }
