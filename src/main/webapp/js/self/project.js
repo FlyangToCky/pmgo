@@ -71,7 +71,15 @@ $(function () {
     $("#sign_out").click(function () {
         signOut();
     });
+//*************************************跳转到主控制台************************************
+    $(".enter").click(function () {
+        console.log(11111111);
+        window.location.href = "/html/main.html";
+    });
 });
+function test() {
+    console.log(11111111);
+}
 /**
  * 新增一个项目
  * @param name
@@ -85,7 +93,7 @@ $(function () {
 function addProject(id,name,no,time_plan_begin,time_plan_end,budget,intro,username) {
     var day = GetDateDiff(time_plan_begin,time_plan_end);
     var str = '<div class="col-md-4 animated bounceInDown"><input type="hidden" value="'+id+'"><div class="ibox"><div class="ibox-title">'+
-        '<span class="label label-primary pull-right">编辑</span><h5>'+name+'</h5></div>'+
+        '<span onclick="test" class="label label-primary pull-right">进入</span><h5>'+name+'</h5></div>'+
         '<div class="ibox-content"><div class="team-members"><a class="round-person2"><span id="username">'+username+'</span></a>' +
         '<a class="add-project" href="#"><img alt="member" src="../img/plus.png"></a></div><h4>项目简介</h4>'+
         '<p>'+intro+'</p><div><span>当前项目进度：</span><div class="stat-percent">1%</div><div class="progress progress-mini">'+
@@ -151,21 +159,20 @@ function signOut() {
 function getProjectList(id) {
     var list =[];
     $.post("/project/findProjectsListByUserId", {"id":id},function (data) {
-        console.log(data);
         if(data.result){ //有数据
             list = data.result;
             for(var i=0; i<list.length; i++){
                 var project = list[i];
-                    addProject(
-                        project.id,
-                        project.name,
-                        project.no,
-                        project.time_plan_begin,
-                        project.time_plan_end,
-                        project.budget,
-                        project.intro,
-                        project.person_lead
-                    );
+                addProject(
+                    project.id,
+                    project.name,
+                    project.no,
+                    project.time_plan_begin,
+                    project.time_plan_end,
+                    project.budget,
+                    project.intro,
+                    project.person_lead
+                );
             }
         }
     },'json');
