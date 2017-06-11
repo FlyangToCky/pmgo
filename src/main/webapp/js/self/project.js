@@ -71,15 +71,14 @@ $(function () {
     $("#sign_out").click(function () {
         signOut();
     });
-//*************************************跳转到主控制台************************************
-    $(".enter").click(function () {
-        console.log(11111111);
-        window.location.href = "/html/main.html";
-    });
 });
-function test() {
-    console.log(11111111);
+//*************************************跳转到主控制台************************************
+function toMain(id) {
+    //存储哪个项目跳转进入的主控制台
+    sessionStorage.setItem("project_id",id);
+    window.location.href = '/html/main.html';
 }
+
 /**
  * 新增一个项目
  * @param name
@@ -93,7 +92,7 @@ function test() {
 function addProject(id,name,no,time_plan_begin,time_plan_end,budget,intro,username) {
     var day = GetDateDiff(time_plan_begin,time_plan_end);
     var str = '<div class="col-md-4 animated bounceInDown"><input type="hidden" value="'+id+'"><div class="ibox"><div class="ibox-title">'+
-        '<span onclick="test" class="label label-primary pull-right">进入</span><h5>'+name+'</h5></div>'+
+        '<span onclick="toMain(\''+id+'\')" class="label label-primary pull-right">进入</span><h5>'+name+'</h5></div>'+
         '<div class="ibox-content"><div class="team-members"><a class="round-person2"><span id="username">'+username+'</span></a>' +
         '<a class="add-project" href="#"><img alt="member" src="../img/plus.png"></a></div><h4>项目简介</h4>'+
         '<p>'+intro+'</p><div><span>当前项目进度：</span><div class="stat-percent">1%</div><div class="progress progress-mini">'+

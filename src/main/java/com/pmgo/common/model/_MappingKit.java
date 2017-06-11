@@ -19,10 +19,13 @@ public class _MappingKit {
 		arp.addMapping("blog", "id", Blog.class);
 		arp.addMapping("t_pm_project", "id", PmProject.class);
 		arp.addMapping("t_pm_requirement", "id", PmRequirement.class);
+		arp.addMapping("t_relation_project_user", "id", RelationProjectUser.class);
+		arp.addMapping("t_relation_task_user", "id", RelationTaskUser.class);
 		arp.addMapping("t_sys_logs", "id", SysLogs.class);
 		arp.addMapping("t_sys_system", "id", SysSystem.class);
 		arp.addMapping("t_sys_user", "id", SysUser.class);
 		arp.addMapping("t_tester_bugs", "id", TesterBugs.class);
+		arp.addMapping("t_user_task", "id", UserTask.class);
 	}
 }
 

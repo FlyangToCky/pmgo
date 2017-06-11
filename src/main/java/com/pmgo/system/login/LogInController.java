@@ -1,6 +1,8 @@
 package com.pmgo.system.login;
 
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
+import com.pmgo.common.Interceptor.ReLoginInterceptor;
 import com.pmgo.common.model.SysUser;
 
 import java.util.Map;
@@ -8,6 +10,7 @@ import java.util.Map;
 /**
  * Created by fangy on 2017/6/4.
  */
+@Clear(ReLoginInterceptor.class)
 public class LogInController extends Controller {
     private LogInService service = new LogInService();
     //进入登录页

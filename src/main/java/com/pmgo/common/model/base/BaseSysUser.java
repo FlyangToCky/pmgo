@@ -90,4 +90,13 @@ public abstract class BaseSysUser<M extends BaseSysUser<M>> extends Model<M> imp
 		return get("wechat");
 	}
 
+	public M setTaskId(java.lang.String taskId) {
+		set("task_id", taskId);
+		return (M)this;
+	}
+
+	public java.lang.String getTaskId() {
+		return get("task_id");
+	}
+
 }

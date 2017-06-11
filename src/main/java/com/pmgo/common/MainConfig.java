@@ -1,9 +1,7 @@
 package com.pmgo.common;
 
-import com.pmgo.blog.BlogController;
-import com.pmgo.common.model.PmRequirement;
+import com.pmgo.common.Interceptor.ReLoginInterceptor;
 import com.pmgo.common.model._MappingKit;
-import com.pmgo.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -17,6 +15,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
 import com.pmgo.manage.project.ProjectController;
 import com.pmgo.manage.requirement.RequirementController;
+import com.pmgo.manage.task.TaskController;
 import com.pmgo.system.login.LogInController;
 import com.pmgo.system.logout.LogOutController;
 import com.pmgo.system.register.RegisterController;
@@ -49,6 +48,8 @@ public class MainConfig extends JFinalConfig {
 	 * 配置常量
 	 */
 	public void configConstant(Constants me) {
+		me.setError404View("../html/404.html");
+		me.setError500View("../html/500.html");
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		PropKit.use("a_little_config.txt");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
@@ -65,6 +66,7 @@ public class MainConfig extends JFinalConfig {
 		me.add("/logOut", LogOutController.class);  //登出
 		me.add("/register", RegisterController.class);  //注册
 		me.add("/project", ProjectController.class);  //项目
+		me.add("/task", TaskController.class);  //任务
 	}
 	
 	public void configEngine(Engine me) {
@@ -95,7 +97,7 @@ public class MainConfig extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-		
+	    //me.add(new ReLoginInterceptor());
 	}
 	
 	/**
