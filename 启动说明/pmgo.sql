@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50628
 File Encoding         : 65001
 
-Date: 2017-06-07 08:38:04
+Date: 2017-06-12 13:10:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -114,6 +114,21 @@ INSERT INTO `t_relation_project_user` VALUES ('399db7211bef49abbf0fbcf37dc5d256'
 INSERT INTO `t_relation_project_user` VALUES ('666db7211bef49abbf0fbcf37dc5d256', 'ffe82e2050f1440bbe79c3b6fa381976', '1f8885311e274f3e94bb2f34f7e250b9');
 
 -- ----------------------------
+-- Table structure for t_relation_task_user
+-- ----------------------------
+DROP TABLE IF EXISTS `t_relation_task_user`;
+CREATE TABLE `t_relation_task_user` (
+  `id` varchar(32) NOT NULL COMMENT '主键Id',
+  `task_id` varchar(32) NOT NULL COMMENT '任务Id',
+  `user_id` varchar(32) DEFAULT NULL COMMENT '用户Id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_relation_task_user
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_sys_logs
 -- ----------------------------
 DROP TABLE IF EXISTS `t_sys_logs`;
@@ -153,18 +168,19 @@ CREATE TABLE `t_sys_user` (
   `sex` char(2) DEFAULT '' COMMENT '性别',
   `qq` varchar(20) DEFAULT NULL COMMENT 'qq号码',
   `wechat` varchar(50) DEFAULT '' COMMENT '微信号',
+  `task_id` varchar(32) DEFAULT NULL COMMENT '任务表主键Id',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_sys_user
 -- ----------------------------
-INSERT INTO `t_sys_user` VALUES ('1f8885311e274f3e94bb2f34f7e250b9', '方洋', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '');
-INSERT INTO `t_sys_user` VALUES ('207db7211bef49abbf0fbcf37dc5d256', 'fly3', '202cb962ac59075b964b07152d234b70', null, '7756675675', null, '', null, '');
-INSERT INTO `t_sys_user` VALUES ('3fd09b589a264e439e855dadf2ba73f8', 'fly1', '202cb962ac59075b964b07152d234b70', null, '123456', null, '', null, '');
-INSERT INTO `t_sys_user` VALUES ('acafa0565a4f49d7822a95eb0bfa21e2', 'fly6', '202cb962ac59075b964b07152d234b70', null, '79858587', null, '', null, '');
-INSERT INTO `t_sys_user` VALUES ('d9bfdba97db64ecb8e9fd486bdfcd129', 'fly4', '202cb962ac59075b964b07152d234b70', null, '67876876', null, '', null, '');
-INSERT INTO `t_sys_user` VALUES ('fc875378374e415e89f01b44d18aa299', 'fly2', '202cb962ac59075b964b07152d234b70', null, '456789', null, '', null, '');
+INSERT INTO `t_sys_user` VALUES ('1f8885311e274f3e94bb2f34f7e250b9', '方洋', '1a746099ff2e44881ccf4cd4bedbac48', null, '18326551239', null, '', null, '', null);
+INSERT INTO `t_sys_user` VALUES ('207db7211bef49abbf0fbcf37dc5d256', 'fly3', '202cb962ac59075b964b07152d234b70', null, '7756675675', null, '', null, '', null);
+INSERT INTO `t_sys_user` VALUES ('3fd09b589a264e439e855dadf2ba73f8', 'fly1', '202cb962ac59075b964b07152d234b70', null, '123456', null, '', null, '', null);
+INSERT INTO `t_sys_user` VALUES ('acafa0565a4f49d7822a95eb0bfa21e2', 'fly6', '202cb962ac59075b964b07152d234b70', null, '79858587', null, '', null, '', null);
+INSERT INTO `t_sys_user` VALUES ('d9bfdba97db64ecb8e9fd486bdfcd129', 'fly4', '202cb962ac59075b964b07152d234b70', null, '67876876', null, '', null, '', null);
+INSERT INTO `t_sys_user` VALUES ('fc875378374e415e89f01b44d18aa299', 'fly2', '202cb962ac59075b964b07152d234b70', null, '456789', null, '', null, '', null);
 
 -- ----------------------------
 -- Table structure for t_tester_bugs
@@ -187,3 +203,34 @@ CREATE TABLE `t_tester_bugs` (
 -- ----------------------------
 -- Records of t_tester_bugs
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_user_task
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user_task`;
+CREATE TABLE `t_user_task` (
+  `id` varchar(32) NOT NULL COMMENT '主键',
+  `name` varchar(50) NOT NULL COMMENT '任务名称',
+  `time_begin` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '开始时间',
+  `time_end` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '结束时间',
+  `time_alarm` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '提醒时间',
+  `level` char(2) NOT NULL COMMENT '优先级\r\n01 \r\n02 \r\n03 \r\n04 \r\n05',
+  `mem` varchar(255) DEFAULT '' COMMENT '备注',
+  `state` char(2) NOT NULL COMMENT '任务状态：\r\n01 待处理\r\n02 进行中\r\n03 已完成',
+  `project_id` varchar(32) NOT NULL COMMENT '所属项目Id',
+  `user_id` varchar(32) NOT NULL COMMENT '创建者用户Id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_user_task
+-- ----------------------------
+INSERT INTO `t_user_task` VALUES ('0ad09d0df01746859485811a9c641193', '测试', '2017-06-10 00:00:00', null, null, '01', '', '01', '059af6f0b35243c9b4796b538e781421', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('256356ea5cdc40a580a223242e69063d', '测试3', '2017-06-10 00:00:00', null, null, '01', '', '01', '059af6f0b35243c9b4796b538e781421', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('3af40d62754e44a28c024aba83f63927', '策划死或斤斤计较机', '2017-06-11 21:41:15', '2017-06-11 21:41:15', '2017-06-11 21:41:15', '01', '', '02', 'd4e010a4731e4588acdb53aee1425f29', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('40336358c06640d0986219cf53798a87', '测试', '2017-06-11 21:44:07', '2017-06-11 21:44:07', '2017-06-11 21:44:07', '01', '', '01', 'd4e010a4731e4588acdb53aee1425f29', '3fd09b589a264e439e855dadf2ba73f8');
+INSERT INTO `t_user_task` VALUES ('59b21ef0c5414e139bb4e1068fa8a0ad', '方洋测试', '2017-06-11 18:03:40', '2017-06-11 18:03:40', '2017-06-11 18:03:40', '02', '', '03', 'd4e010a4731e4588acdb53aee1425f29', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('70f32e181a2b478e81bb992aeb24abf4', '测试2', '2017-06-11 21:44:10', '2017-06-11 21:44:10', '2017-06-11 21:44:10', '03', '', '01', 'd4e010a4731e4588acdb53aee1425f29', '3fd09b589a264e439e855dadf2ba73f8');
+INSERT INTO `t_user_task` VALUES ('c133355fa0224330aede3dc279d8d403', '测试2', '2017-06-10 00:00:00', null, null, '01', '', '01', '059af6f0b35243c9b4796b538e781421', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('d093179a5ba0472ea1bff62ac74ed2fb', '方洋测试2', '2017-06-11 21:40:30', '2017-06-11 21:40:30', '2017-06-11 21:40:30', '04', '', '03', 'd4e010a4731e4588acdb53aee1425f29', '1f8885311e274f3e94bb2f34f7e250b9');
+INSERT INTO `t_user_task` VALUES ('d1476a2ae0cb47cfab157117aad43b29', '测试1111', '2017-06-11 21:43:55', '2017-06-11 21:43:55', '2017-06-11 21:43:55', '01', '', '02', 'd4e010a4731e4588acdb53aee1425f29', '1f8885311e274f3e94bb2f34f7e250b9');
