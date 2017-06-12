@@ -1,6 +1,7 @@
 /**
  * Created by fangy on 2017/6/10.
  */
+var allList = []; //所有的任务
 $(function () {
     //拖动任务
     $(".sortable-list").sortable({
@@ -74,7 +75,7 @@ function changeState(id,state) {
  *          , username 任务创建者 String}}
  */
 function findListByProjectId(project_id) {
-    var allList = []; //所有的任务
+    //var allList = []; //所有的任务
     var waitingList= []; //待处理的任务
     var doingList =[]; //进行中的任务
     var finshedList =[]; //已完成的任务
@@ -149,7 +150,7 @@ function showOneTask(id,state,level,name,user,time) {
         name+'</div><div class="col-sm-3"><span class="pull-right task-round-person">'+
         user+'</span></div></div> <div class="row agile-detail"> <div class="col-sm-9">'+
         '<i class="fa fa-clock-o"></i>'+time+'</div><div class="col-sm-3">'+
-        '<a href="#" class="pull-right btn btn-xs btn-white">详情</a>'+
+        '<a href="#" onclick="showProjectDetail(\''+id+'\')" data-toggle="modal" data-target="#myModal" class="pull-right btn btn-xs btn-white">详情</a>'+
         '</div></div></li>';
     //TODO time后面可以处理提醒时间
     switch (state){//根据任务类型，决定放在哪一列
@@ -189,4 +190,17 @@ function showTaskList(waitingList,doingList,finshedList) {
             showOneTask(finisnedOne.id,"03",finisnedOne.level,finisnedOne.name,finisnedOne.username,finisnedOne.time_begin);
         }
     }
+}
+/**
+ * 显示出任务详情
+ * @param taskId 任务Id
+ */
+function showProjectDetail(taskId) {
+    console.log(taskId);
+    /*for(var i=0; i<allList.length; i++){
+        var oneTask = allList[i];
+        if(oneTask.id == taskId){
+
+        }
+    }*/
 }

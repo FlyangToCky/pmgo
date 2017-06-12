@@ -48,8 +48,8 @@ public class MainConfig extends JFinalConfig {
 	 * 配置常量
 	 */
 	public void configConstant(Constants me) {
-		me.setError404View("../html/404.html");
-		me.setError500View("../html/500.html");
+		me.setError404View("/html/404.html");
+		me.setError500View("/html/500.html");
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		PropKit.use("a_little_config.txt");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
