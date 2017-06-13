@@ -88,12 +88,43 @@
                     <h4 class="modal-title" id="myModalLabel">任务详情</h4>
                 </div>
                 <div class="modal-body">  <!-- 内容 -->
-                    <div class="form-group row">
-                        <label class="col-md-3 control-label">任务名称：</label>
-                        <div class="col-md-9">
-                            <input type="text" id="name" class="form-control" placeholder="请输入项目名称">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="pull-left">任务名称</label>
                         </div>
-                        <div class="btn-group">
+                    </div>
+                    <div class="row m-t-md">
+                        <div class="col-md-3">
+                            <div>创建者</div>
+                            <div>方洋</div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                状态
+                            </div>
+                            <div>
+                                <div data-toggle="dropdown">
+                                    <div style="width: 20px; height: 20px;border-radius: 50%;border:1px solid red;display: inline-block"></div>
+                                    <div style="display: inline-block;">待处理</div>
+                                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a href="buttons.html#">置顶</a>
+                                    </li>
+                                    <li><a href="buttons.html#">修改</a>
+                                    </li>
+                                    <li><a href="buttons.html#">禁用</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>优先级</div>
+                            <div style="width: 20px;height: 20px;border-radius: 50%;background-color:red;color: white;text-align: center">1</div>
+                        </div>
+                        <div class="col-md-3">
+                            截止时间
+                        </div>
+                        <!--<div class="btn-group">
                             <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle" aria-expanded="false">操作 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -107,7 +138,7 @@
                                 <li><a href="buttons.html#">删除</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <!--<div class="modal-footer">
