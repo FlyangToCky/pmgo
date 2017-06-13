@@ -11,7 +11,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
     <link href="../css/animate.css" rel="stylesheet">
@@ -20,113 +21,96 @@
 </head>
 
 <body class="gray-bg">
-    <div class="wrapper wrapper-content  animated fadeInRight">
-        <div class="row">
-            <div id="waitingList" class="col-sm-4">
-                <div class="ibox">
-                    <div class="ibox-content">
-                        <h3>待处理</h3>
-                        <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row">
+        <div id="waitingList" class="col-sm-4">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>待处理</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
 
-                        <div class="input-group">
-                            <input id="task_name" type="text" placeholder="添加新任务" class="input input-sm form-control">
-                            <span class="input-group-btn">
+                    <div class="input-group">
+                        <input id="task_name" type="text" placeholder="添加新任务" class="input input-sm form-control">
+                        <span class="input-group-btn">
                                 <button id="add" type="button" class="btn btn-sm btn-white"> <i class="fa fa-plus"></i> 添加</button>
                             </span>
-                        </div>
-                        <ul class="sortable-list connectList agile-list">
-                            <!--<li class="row warning-element">
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        加强过程管理，及时统计教育经费使用情况，做到底码清楚，
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span class="pull-right task-round-person">方洋</span>
-                                    </div>
-                                </div>
-                                <div class="row agile-detail">
-                                    <div class="col-sm-9">
-                                        <i class="fa fa-clock-o"></i> 2015.09.01
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <a href="#" class="pull-right btn btn-xs btn-white">详情</a>
-                                    </div>
-                                </div>
-                            </li>-->
-                        </ul>
                     </div>
+                    <ul class="sortable-list connectList agile-list">
+                        <!--<li class="row warning-element">
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    加强过程管理，及时统计教育经费使用情况，做到底码清楚，
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="pull-right task-round-person">方洋</span>
+                                </div>
+                            </div>
+                            <div class="row agile-detail">
+                                <div class="col-sm-9">
+                                    <i class="fa fa-clock-o"></i> 2015.09.01
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="pull-right btn btn-xs btn-white">详情</a>
+                                </div>
+                            </div>
+                        </li>-->
+                    </ul>
                 </div>
             </div>
-            <div id="doingList" class="col-sm-4">
-                <div class="ibox">
-                    <div class="ibox-content">
-                        <h3>进行中</h3>
-                        <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
-                        <ul class="sortable-list connectList agile-list">
-                        </ul>
-                    </div>
+        </div>
+        <div id="doingList" class="col-sm-4">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>进行中</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
+                    <ul class="sortable-list connectList agile-list">
+                    </ul>
                 </div>
             </div>
-            <div id="finshedList" class="col-sm-4">
-                <div class="ibox">
-                    <div class="ibox-content">
-                        <h3>已完成</h3>
-                        <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
-                        <ul class="sortable-list connectList agile-list">
-                        </ul>
-                    </div>
+        </div>
+        <div id="finshedList" class="col-sm-4">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <h3>已完成</h3>
+                    <p class="small"><i class="fa fa-hand-o-up"></i> 在列表之间拖动任务面板</p>
+                    <ul class="sortable-list connectList agile-list">
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 任务详情  -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">  <!--头部-->
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">任务详情</h4>
+</div>
+<!-- 任务详情  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">  <!--头部-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">任务详情</h4>
+            </div>
+            <div class="modal-body">  <!-- 内容 -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="pull-left">任务名称</label>
+                    </div>
                 </div>
-                <div class="modal-body">  <!-- 内容 -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label class="pull-left">任务名称</label>
+                <div class="row m-t-md">
+                    <div class="col-md-3 b-r">
+                        <div><label>创建者</label></div>
+                        <div id="task_create" class="task-round-person-sm">
+                            方洋
                         </div>
                     </div>
-                    <div class="row m-t-md">
-                        <div class="col-md-3">
-                            <div>创建者</div>
-                            <div>方洋</div>
+                    <div class="col-md-3 b-r">
+                        <div>
+                            <label>状态</label>
                         </div>
-                        <div class="col-md-3">
-                            <div>
-                                状态
+                        <div>
+                            <div data-toggle="dropdown">
+                                <div class="task-state-circle"></div>
+                                <div id="task_state">待处理</div>
                             </div>
-                            <div>
-                                <div data-toggle="dropdown">
-                                    <div style="width: 20px; height: 20px;border-radius: 50%;border:1px solid red;display: inline-block"></div>
-                                    <div style="display: inline-block;">待处理</div>
-                                </div>
-                                <ul class="dropdown-menu">
-                                    <li><a href="buttons.html#">置顶</a>
-                                    </li>
-                                    <li><a href="buttons.html#">修改</a>
-                                    </li>
-                                    <li><a href="buttons.html#">禁用</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div>优先级</div>
-                            <div style="width: 20px;height: 20px;border-radius: 50%;background-color:red;color: white;text-align: center">1</div>
-                        </div>
-                        <div class="col-md-3">
-                            截止时间
-                        </div>
-                        <!--<div class="btn-group">
-                            <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle" aria-expanded="false">操作 <span class="caret"></span>
-                            </button>
                             <ul class="dropdown-menu">
                                 <li><a href="buttons.html#">置顶</a>
                                 </li>
@@ -134,33 +118,85 @@
                                 </li>
                                 <li><a href="buttons.html#">禁用</a>
                                 </li>
-                                <li class="divider"></li>
-                                <li><a href="buttons.html#">删除</a>
-                                </li>
                             </ul>
-                        </div>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 b-r">
+                        <div><label>优先级</label></div>
+                        <div class="task-level-circle">
+                            紧急
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div><label>截止时间</label></div>
+                        <div><i class="fa fa-calendar" aria-hidden="true"></i>设置</div>
                     </div>
                 </div>
-                <!--<div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button id="save" type="button" class="btn btn-primary">保存</button>
-                </div>-->
+                <div class="row m-t-md">
+                    <div class="panel-group col-md-12" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne">
+                                        <div><i class="fa fa-clock-o" aria-hidden="true"></i>设置提醒</div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    内容1
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <div><i class="fa fa-bookmark" aria-hidden="true"></i>设置备注</div>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    内容2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div><label>参数者</label></div>
+                        <div>
+                            方洋 +
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--<div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button id="save" type="button" class="btn btn-primary">保存</button>
+            </div>-->
         </div>
     </div>
+</div>
 
-    <!-- 全局js -->
-    <script src="../js/jquery.min.js?v=2.1.4"></script>
-    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="../js/jquery-ui-1.10.4.min.js"></script>
+<!-- 全局js -->
+<script src="../js/jquery.min.js?v=2.1.4"></script>
+<script src="../js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../js/jquery-ui-1.10.4.min.js"></script>
 
-    <!--插件js -->
-    <script src="../js/plugins/layer/layer.min.js"></script>
+<!--插件js -->
+<script src="../js/plugins/layer/layer.min.js"></script>
 
-    <!-- 自定义js -->
-    <script src="../js/content.js?v=1.0.0"></script>
+<!-- 自定义js -->
+<script src="../js/content.js?v=1.0.0"></script>
 
-    <script src="../js/self/task.js"></script>
+<script src="../js/self/task.js"></script>
 
 </body>
 

@@ -7981,7 +7981,32 @@ body.skin-3 {
     font-size: 12px;
     font-weight: 700;
 }
+.task-round-person-sm{
+    width: 24px;
+    height: 24px;
+    padding-top: 2px;
+    text-align: center;
+    background-color: #00a2d4;
+    border-radius: 50%;
+    color: white;
+    font-size: 4px;
+}
 #waitingList,#doingList,#finshedList{
     /*height: 600px;*/
     /*overflow: scroll;*/
+}
+.task-state-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:1px solid red;
+    display: inline-block
+}
+.task-level-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:red;
+    color: white;
+    text-align: center
 }
