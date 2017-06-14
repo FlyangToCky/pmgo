@@ -7990,6 +7990,7 @@ body.skin-3 {
     border-radius: 50%;
     color: white;
     font-size: 4px;
+    display: inline-block;
 }
 #waitingList,#doingList,#finshedList{
     /*height: 600px;*/
@@ -8014,4 +8015,7 @@ body.skin-3 {
     font-size: 14px;
     display: inline-block;
     vertical-align: text-bottom;
+}
+.task-person-add{
+
 }

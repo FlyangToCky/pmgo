@@ -41,7 +41,7 @@ public class MainConfig extends JFinalConfig {
 		/**
 		 * 特别注意：IDEA 之下建议的启动方式，仅比 eclipse 之下少了最后一个参数
 		 */
-		 JFinal.start("src/main/webapp", 80, "/");
+		 JFinal.start("src/main/webapp", 90, "/");
 	}
 	
 	/**
@@ -70,8 +70,8 @@ public class MainConfig extends JFinalConfig {
 	}
 	
 	public void configEngine(Engine me) {
-		me.addSharedFunction("/common/_layout.html");
-		me.addSharedFunction("/common/_paginate.html");
+		//me.addSharedFunction("/common/_layout.html");
+		//me.addSharedFunction("/common/_paginate.html");
 	}
 	
 	/**
