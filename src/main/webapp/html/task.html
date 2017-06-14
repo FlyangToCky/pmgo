@@ -104,76 +104,63 @@
                     </div>
                     <div class="col-md-3 b-r">
                         <div>
-                            <label>状态</label>
+                            <label>优先级</label>
                         </div>
                         <div>
                             <div data-toggle="dropdown">
-                                <div class="task-state-circle"></div>
-                                <div id="task_state">待处理</div>
+                                <div class="task-level-circle t-l-01"></div>
+                                <div id="task-state-circle">普通</div>
                             </div>
                             <ul class="dropdown-menu">
-                                <li><a href="buttons.html#">置顶</a>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="task-level-circle t-l-01"></div>
+                                        <div>普通</div>
+                                        <i class="fa fa-check pull-right m-t-xs" aria-hidden="true"></i>
+                                    </a>
                                 </li>
-                                <li><a href="buttons.html#">修改</a>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="task-level-circle t-l-02"></div>
+                                        <div>中等</div>
+                                    </a>
                                 </li>
-                                <li><a href="buttons.html#">禁用</a>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="task-level-circle t-l-03"></div>
+                                        <div>紧急</div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3 b-r">
-                        <div><label>优先级</label></div>
-                        <div class="task-level-circle">
-                            紧急
+                        <div><label>截止时间</label></div>
+                        <div>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span class="m-l-xs">点击设置</span>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div><label>截止时间</label></div>
-                        <div><i class="fa fa-calendar" aria-hidden="true"></i>设置</div>
+                        <div><label>提醒时间</label></div>
+                        <div>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span class="m-l-xs">2016-10-10</span>
+                        </div>
                     </div>
                 </div>
                 <div class="row m-t-md">
-                    <div class="panel-group col-md-12" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                       aria-expanded="true" aria-controls="collapseOne">
-                                        <div><i class="fa fa-clock-o" aria-hidden="true"></i>设置提醒</div>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    内容1
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <div><i class="fa fa-bookmark" aria-hidden="true"></i>设置备注</div>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                                 aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    内容2
-                                </div>
-                            </div>
+                    <div class="col-md-12">
+                        <div><label>参与者</label></div>
+                        <div class="task-round-person-sm">
+                            方洋
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row m-t-md">
                     <div class="col-md-12">
-                        <div><label>参数者</label></div>
-                        <div>
-                            方洋 +
-                        </div>
+                        <label>备注</label>
+                        <textarea class="form-control"></textarea>
                     </div>
                 </div>
             </div>

@@ -7995,18 +7995,23 @@ body.skin-3 {
     /*height: 600px;*/
     /*overflow: scroll;*/
 }
-.task-state-circle{
-    width: 20px;
-    height: 20px;
+.task-level-circle{
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    border:1px solid red;
     display: inline-block
 }
-.task-level-circle{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color:red;
-    color: white;
-    text-align: center
+.t-l-01{
+    border: 1px solid #23b7e5;
+}
+.t-l-02{
+    border: 1px solid #fad733;
+}
+.t-l-03{
+    border: 1px solid #f05050;
+}
+.task-level-circle + div{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: text-bottom;
 }
